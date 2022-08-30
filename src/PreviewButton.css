@@ -1,0 +1,10 @@
+.Preview-button-container {
+  width: 100%;
+  padding: 10px;
+  height: auto;
+  background-color: rgba(104, 109, 109, 0.923);
+  color: black;
+}
+.shopping-button {
+  padding: 10px;
+}

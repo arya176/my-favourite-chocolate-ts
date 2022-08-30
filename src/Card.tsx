@@ -1,17 +1,21 @@
 import React from "react";
+import { IChocolateItem } from "./chocolates";
+import "./Card.css";
+import { PreviewButton } from "./PreviewButton";
 
 interface ICardProps {
   chocolate: IChocolateItem;
 }
 
-export const Card: React.FC<ICardProps> = ({ chocolate }) => {
-  <div>
-    <img src={chocolate.img} alt="cover-product" />
+export const Card: React.FC<ICardProps> = ({ chocolate }) => (
+  <div className="div-card">
+    <img className="Image" src={chocolate.imgURL} alt="cover-product" />
     <h6>{chocolate.name}</h6>
-    <p>{chocolate.price}</p>
+    <p>${chocolate.price}</p>
     <button>Buy</button>
-  </div>;
-};
+    <PreviewButton description={chocolate.description} />
+  </div>
+);
 
 // how can i submit the type of velues inside the funcion?
 // like:

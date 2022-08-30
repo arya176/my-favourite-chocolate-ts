@@ -1,5 +1,6 @@
 // import logo from "./logo.svg";
-// import './App.css';
+import "./App.css";
+import { ShoppingCart } from "./ShoppingCart";
 
 import React from "react";
 import { Card } from "./Card";
@@ -8,15 +9,16 @@ import { chocolates } from "./chocolates";
 export const App = () => {
   return (
     <div>
-      <h1>THE HOLLY SHOP</h1>
-      {chocolates.map((chocolate) => (
-        <Card
-          key={chocolate.id}
-          img={chocolate.imgURL}
-          name={chocolate.name}
-          price={chocolate.price}
-        />
-      ))}
+      <div className="header">
+        <h1>THE HOLLY SHOP</h1>
+        <ShoppingCart />
+      </div>
+
+      <div className="flex-container">
+        {chocolates.map((each) => (
+          <Card chocolate={each} />
+        ))}
+      </div>
     </div>
   );
 };
